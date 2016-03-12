@@ -1,0 +1,49 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: gwendelyndaniels
+ * Date: 3/12/16
+ * Time: 2:46 PM
+ */
+
+
+function decisiontree_appeal_page() {
+  drupal_add_js(drupal_get_path('module','decisiontree') .'/js/jquery.scrollTo.min.js');
+
+  drupal_add_js(drupal_get_path('module', 'decisiontree') . '/js/vendor/svg.js');
+  drupal_add_js(drupal_get_path('module', 'decisiontree') . '/js/dist/flowsvg.js');
+  drupal_add_js(drupal_get_path('module', 'decisiontree') .'/js/trees/appeal.js');
+  return '<div id="drawing"></div>';
+
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function decisiontree_node_view($node, $view_mode, $langcode) {
+  if($node->type == 'decision_tree') {
+    drupal_add_js(drupal_get_path('module', 'decisiontree') . '/js/jquery.scrollTo.min.js');
+
+    drupal_add_js(drupal_get_path('module', 'decisiontree') . '/js/vendor/svg.js');
+    drupal_add_js(drupal_get_path('module', 'decisiontree') . '/js/dist/flowsvg.js');
+  }
+}
+
+/**
+ * Implements hook_menu().
+ */
+function decisiontree_menu() {
+  $items['trees/appeals'] = array(
+    'page callback' => 'decisiontree_appeal_page',
+    'access callback' => TRUE,
+  );
+  $items['trees'] = array (
+    'page callback' => "decisiontree_trees",
+    'access callback' => TRUE,
+  );
+  return $items;
+}
+
+function decisiontree_trees() {
+  return "hello";
+}
