@@ -1,4 +1,4 @@
-# dcfs_hackathon
+# Tech Jor Justice Hackathon
 This is the Drupal site from tech for justice hackathon in Chicago March 12-13, 2016.
 
 The tree that we created for the DCFS process flowchart can be found:
