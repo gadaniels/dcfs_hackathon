@@ -157,7 +157,7 @@ var flowSVG = (function () {
     }
 
     function decision(options) {
-        var shape, text,
+        var tip, tg, rect, tiptxt, shape, text,
             group = chartGroup.group(),
             coords =
                 "0," +
@@ -173,6 +173,7 @@ var flowSVG = (function () {
                 fill: config.decisionFill,
                 "class": 'fc-rhombus'
             });
+        rect = shape;
         group.attr('class', 'fc-decision');
 
         text = group.text(function (add) {
@@ -184,6 +185,42 @@ var flowSVG = (function () {
 
         text.cx(shape.cx() + text.bbox().width + text.bbox().x);
         text.cy(shape.cy());
+
+        // Dealing with tips
+        if (options.tip) {
+
+            tip = group.text(options.tip.title)
+                .fill(config.finishLinkColour)
+                .font({size: config.finishFontSize})
+                .attr('cursor', 'pointer');
+
+            tip.move(config.finishLeftMargin + (config.shapeWidth/2 - 24), rect.height() - 25);
+
+            tip.on('mouseover', function () {
+                    tg = group.group();
+                    tiptxt = group.text(function (add) {
+                            options.tip.text.forEach(function (l) {
+                                add.tspan(l).newLine();
+                            });
+                        })
+                        .font({size: config.tipFontSize}).move(config.tipMarginLeft, config.tipMarginTop);
+
+                    var rct = tg.rect(config.shapeWidth - (config.finishLeftMargin), tiptxt.bbox().height + (config.tipMarginTop * 2))
+                        .attr({
+                            fill: config.tipFill,
+                            stroke: config.tipStrokeColour,
+                            "class": "fc-tip"
+                        });
+
+                    tg.add(tiptxt);
+                    tg.x(config.finishLeftMargin / 2);
+                    //tg.y(this.getAttribute('y') - rct.height());
+                })
+                .on('mouseout', function () {
+                    tg.remove();
+                });
+        }
+
         return group;
     }
 

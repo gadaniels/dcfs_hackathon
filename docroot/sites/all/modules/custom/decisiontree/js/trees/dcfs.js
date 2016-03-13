@@ -9,7 +9,9 @@ flowSVG.config({
     scrollto: false,
     processHeight:100,
     processWidth:250,
-    finishHeight:100,
+    finishHeight:125,
+    finishFill:'#9bc2cf',
+
 });
 flowSVG.shapes(
     [{
@@ -41,8 +43,9 @@ flowSVG.shapes(
             label:'indicated',
             type:'decision',
             text:[
-                'Are you indicated alone',
-                'or with someone else?'
+                'Are you indicated,',
+                'either alone or with ',
+                'someone else?'
             ],
             yes:'self',
             no:'abuser'
@@ -56,7 +59,7 @@ flowSVG.shapes(
             links:[
                 {
                     text:'Learn what your options are',
-                    url:'http://www.google.com',
+                    url:'http://techjusticechicagor2tpt43bcu.devcloud.acquia-sites.com/content/im-not-indicated',
                     target:''
                 }
             ]
@@ -87,7 +90,7 @@ flowSVG.shapes(
             links:[
                 {
                     text:'Learn more',
-                    url:'http://www.google.com',
+                    url:'http://techjusticechicagor2tpt43bcu.devcloud.acquia-sites.com/content/appeal',
                     target:'isIntact'
                 }
             ],
@@ -114,7 +117,7 @@ flowSVG.shapes(
             links:[
                 {
                     text:'Learn about foster care',
-                    url:'http://www.google.com',
+                    url:'http://techjusticechicagor2tpt43bcu.devcloud.acquia-sites.com/content/foster-care',
                     target:'fosterCareDecision'
                 }
             ],
@@ -215,7 +218,7 @@ flowSVG.shapes(
             links:[
                 {
                     text:'What happens at court?',
-                    url:'http://www.google.com',
+                    url:'http://techjusticechicagor2tpt43bcu.devcloud.acquia-sites.com/content/court',
                     target:'courtDates'
                 }
             ],
