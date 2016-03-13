@@ -1,21 +1,25 @@
 <div id="drawing"></div>
     <script>
 
-    flowSVG.draw(SVG('drawing').size(900,1100));
+    flowSVG.draw(SVG('drawing').size(900,3000));
 flowSVG.config({
-    interactive: true,
-    showButtons: true,
+    interactive: false,
+    showButtons: false,
     connectorLength: 60,
-    scrollto: true
+    scrollto: false,
+    processHeight:50,
+    processWidth:250,
+    finishHeight:100,
 });
 flowSVG.shapes(
     [
-
         {
             label:'investigatorVisit',
             type:'decision',
             text:[
-                'Did investigator visit result in a finding of Indicated?'
+                'Did investigator visit',
+                'result in a finding',
+                'of Indicated?'
             ],
             yes:'indicated',
             no:'notIndicated'
@@ -38,10 +42,11 @@ flowSVG.shapes(
             label:'indicated',
             type:'decision',
             text:[
-                'Are you indicated alone or with someone else?'
+                'Are you indicated alone',
+                'or with someone else?'
             ],
-            yes:'abuser',
-            no:'fosterCare'
+            yes:'self',
+            no:'abuser'
         },
         {
             label:'abuser',
@@ -61,12 +66,29 @@ flowSVG.shapes(
             label:'self',
             type:'process',
             text:[
-                'If you have an advocate, talk to them at every step!'
+                'If you have an advocate,',
+                'talk to them at every step!'
             ],
             links:[
                 {
                     text:'Appeal the finding',
                     url:'',
+                    target:'intact'
+                }
+            ],
+            next:'intact'
+        },
+        {
+            label:'intact',
+            type:'process',
+            text:[
+                'Consider whether you',
+                'wish to appeal the decision'
+            ],
+            links:[
+                {
+                    text:'Learn more',
+                    url:'http://www.google.com',
                     target:'isIntact'
                 }
             ],
@@ -78,52 +100,153 @@ flowSVG.shapes(
             text:[
                 'Is the family still together?'
             ],
-            yes:'intact',
+            yes:'intactCaseworker',
             no:'fosterCare'
         },
         {
-            label:'intact',
+            label:'fosterCare',
+            type:'process',
+            text:[
+                'If your kids go to foster',
+                'care, you can start',
+                'working with a caseworker',
+                'and going to court'
+            ],
+            links:[
+                {
+                    text:'Learn about foster care',
+                    url:'http://www.google.com',
+                    target:'fosterCareDecision'
+                }
+            ],
+            next:'fosterCareDecision'
+        },
+        {
+            label:'fosterCareDecision',
+            type:'decision',
+            text:[
+                'Would you like to',
+                'learn about working',
+                'with your caseworker',
+                'first?'
+            ],
+            yes:'fosterCaseworker',
+            no:'fosterCourt'
+        },
+        {
+            label:'fosterCaseworker',
             type:'process',
             text:[
                 ''
             ],
             links:[
                 {
-                    text:'Click here to learn about next steps and chances for appeal',
+                    text:'Meet with your caseworker',
                     url:'http://www.google.com',
-                    target:'intactAdvocate'
+                    target:'fosterIntegratedAssessment'
                 }
             ],
-            next:'intactAdvocate'
+            next:'fosterIntegratedAssessment'
         },
         {
-            label:'fosterCare',
+            label:'fosterIntegratedAssessment',
+            type:'process',
+            text:[
+                'Receive an Integrated',
+                'Assessment'
+            ],
+            links:[
+                {
+                    text:'Learn more',
+                    url:'http://www.google.com',
+                    target:'fosterSvcPlan'
+                }
+            ],
+            next:'fosterSvcPlan'
+        },
+        {
+            label:'fosterSvcPlan',
+            type:'process',
+            text:[
+                ''
+            ],
+            links:[
+                {
+                    text:'Receive a Service Plan',
+                    url:'http://www.google.com',
+                    target:'fosterMandatedSvc'
+                }
+            ],
+            next:'fosterMandatedSvc'
+        },
+        {
+            label:'fosterMandatedSvc',
+            type:'process',
+            text:[
+                'Proceed with mandated',
+                'services'
+            ],
+            links:[
+                {
+                    text:'Learn more',
+                    url:'http://www.google.com',
+                    target:'fosterSvcResult'
+                }
+            ],
+            next:'fosterSvcResult'
+        },
+        {
+            label:'fosterSvcResult',
+            type:'decision',
+            text:[
+                'Have you been compliant',
+                'with mandated services?'
+            ],
+            yes:'fosterSvcComplete',
+            no:'fosterSvcFail'
+        },
+        {
+            label:'fosterSvcComplete',
             type:'finish',
             text:[
                 ''
             ],
             links:[
                 {
-                    text:'Click to learn about foster care',
+                    text:'Case is typically concluded',
                     url:'http://www.google.com',
                     target:''
                 }
             ]
         },
         {
-            label:'intactAdvocate',
-            type:'process',
+            label:'fosterSvcFail',
+            type:'finish',
+            text:[
+                'Case may be continued',
+                'or concluded'
+            ],
+            links:[
+                {
+                    text:'Learn more',
+                    url:'http://www.google.com',
+                    target:''
+                }
+            ]
+        },
+        {
+            label:'fosterCourt',
+            type:'finish',
             text:[
                 ''
             ],
             links:[
                 {
-                    text:'Meet with your advocate',
+                    text:'Go to court hearing',
                     url:'http://www.google.com',
-                    target:'intactCaseworker'
+                    target:''
                 }
-            ],
-            next:'intactCaseworker'
+            ]
         },
         {
             label:'intactCaseworker',
@@ -144,11 +267,12 @@ flowSVG.shapes(
             label:'intactIntegratedAssessment',
             type:'process',
             text:[
-                ''
+                'Receive an Integrated',
+                'Assessment'
             ],
             links:[
                 {
-                    text:'Receive an Integrated Assessment',
+                    text:'Learn more',
                     url:'http://www.google.com',
                     target:'intactSvcPlan'
                 }
@@ -174,11 +298,12 @@ flowSVG.shapes(
             label:'intactMandatedSvc',
             type:'process',
             text:[
-                ''
+                'Proceed with mandated',
+                'services'
             ],
             links:[
                 {
-                    text:'Proceed with mandated services',
+                    text:'Learn more',
                     url:'http://www.google.com',
                     target:'intactSvcResult'
                 }
@@ -189,7 +314,8 @@ flowSVG.shapes(
             label:'intactSvcResult',
             type:'decision',
             text:[
-                'Have you been compliant with mandated services?'
+                'Have you been compliant',
+                'with mandated services?'
             ],
             yes:'intactSvcComplete',
             no:'intactSvcFail'
@@ -212,17 +338,17 @@ flowSVG.shapes(
             label:'intactSvcFail',
             type:'finish',
             text:[
-                ''
+                'Case may be continued',
+                'or concluded'
             ],
             links:[
                 {
-                    text:'Case may be continued or concluded',
+                    text:'Learn more',
                     url:'http://www.google.com',
                     target:''
                 }
             ]
         }
-
     ]);
 
 </script>
