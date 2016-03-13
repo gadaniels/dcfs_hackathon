@@ -98,6 +98,7 @@ function zurb_foundation_field($variables) {
   }
   else {
     foreach ($variables['items'] as $item) {
+
       $output .= drupal_render($item);
     }
   }
@@ -1350,4 +1351,15 @@ function zurb_foundation_links__split_button($variables) {
   $output = _zurb_foundation_links($links);
 
   return $primary_link . '<ul id="' . $id . '" class="f-dropdown" data-dropdown-content>' . $output . '</ul>';
+}
+
+
+function zurb_foundation_field__field_title(&$variables) {
+  $output = '<li>' .$variables['element']['#items'][0]['value'] .'</li>';
+  return $output;
+}
+
+function zurb_foundation_field__field_description(&$variables) {
+  $output = '<blockquote>' .$variables['element']['#items'][0]['value'] .'</blockquote>';
+  return $output;
 }

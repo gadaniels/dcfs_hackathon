@@ -21,6 +21,8 @@ function decisiontree_appeal_page() {
  * Implements hook_node_view().
  */
 function decisiontree_node_view($node, $view_mode, $langcode) {
+
+
   if($node->type == 'decision_tree') {
     drupal_add_js(drupal_get_path('module', 'decisiontree') . '/js/jquery.scrollTo.min.js');
 
