@@ -1,29 +1,28 @@
 <div id="drawing"></div>
     <script>
 
-    flowSVG.draw(SVG('drawing').size(900,3000));
+    flowSVG.draw(SVG('drawing').size(2000,3000));
 flowSVG.config({
     interactive: false,
     showButtons: false,
     connectorLength: 60,
     scrollto: false,
-    processHeight:50,
+    processHeight:100,
     processWidth:250,
     finishHeight:100,
 });
 flowSVG.shapes(
-    [
-        {
-            label:'investigatorVisit',
-            type:'decision',
-            text:[
-                'Did investigator visit',
-                'result in a finding',
-                'of Indicated?'
-            ],
-            yes:'indicated',
-            no:'notIndicated'
-        },
+    [{
+        label:'investigatorVisit',
+        type:'decision',
+        text:[
+            'Did investigator visit',
+            'result in a finding',
+            'of Indicated?'
+        ],
+        yes:'indicated',
+        no:'notIndicated'
+    },
         {
             label:'notIndicated',
             type:'finish',
@@ -32,8 +31,8 @@ flowSVG.shapes(
             ],
             links:[
                 {
-                    text:'Appeal the decision',
-                    url:'http://www.google.com',
+                    text:'Learn what your options are',
+                    url:'/content/not-indicated',
                     target:''
                 }
             ]
@@ -71,8 +70,8 @@ flowSVG.shapes(
             ],
             links:[
                 {
-                    text:'Appeal the finding',
-                    url:'',
+                    text:'Learn more',
+                    url:'/content/im-indicated',
                     target:'intact'
                 }
             ],
@@ -197,34 +196,76 @@ flowSVG.shapes(
         },
         {
             label:'fosterSvcResult',
-            type:'decision',
+            type:'finish',
             text:[
-                'Have you been compliant',
-                'with mandated services?'
+                'Your level of compliance',
+                'will feed into the court',
+                'decision. Non-compliance',
+                'makes a termination',
+                'of rights almost certain.'
             ],
-            yes:'fosterSvcComplete',
-            no:'fosterSvcFail'
+
         },
         {
-            label:'fosterSvcComplete',
-            type:'finish',
+            label:'fosterCourt',
+            type:'process',
             text:[
                 ''
             ],
             links:[
                 {
-                    text:'Case is typically concluded',
+                    text:'What happens at court?',
+                    url:'http://www.google.com',
+                    target:'courtDates'
+                }
+            ],
+            next:'courtDates'
+        },
+        {
+            label:'courtDates',
+            type:'process',
+            text:[
+                'You will be assigned court',
+                'dates. Click below to',
+                'learn about expectations',
+                'when you attend court dates.'
+            ],
+            links:[
+                {
+                    text:'Learn more',
+                    url:'http://www.google.com',
+                    target:'judgment'
+                }
+            ],
+            next:'judgment'
+        },
+        {
+            label:'judgment',
+            type:'decision',
+            text:[
+                'The judge decides',
+                'how your case will',
+                'end. Were your children',
+                'returned to you?'
+            ],
+            links:[
+                {
+                    text:'Learn more',
                     url:'http://www.google.com',
                     target:''
                 }
-            ]
+            ],
+            yes:'returned',
+            no:'notReturned'
         },
         {
-            label:'fosterSvcFail',
+            label:'returned',
             type:'finish',
             text:[
-                'Case may be continued',
-                'or concluded'
+                'There will be a wrap-up',
+                'process that may take',
+                '6 months to a year',
+                'before the case is closed.'
             ],
             links:[
                 {
@@ -235,14 +276,77 @@ flowSVG.shapes(
             ]
         },
         {
-            label:'fosterCourt',
-            type:'finish',
+            label:'notReturned',
+            type:'decision',
             text:[
-                ''
+                'Was the judgment',
+                'for Guardianship?'
+            ],
+            yes:'guardianship',
+            no:'terminationOfRights'
+        },
+        {
+            label:'guardianship',
+            type:'process',
+            text:[
+                'The children will',
+                'live with someone',
+                'else, but you will',
+                'have some rights.'
             ],
             links:[
                 {
-                    text:'Go to court hearing',
+                    text:'Learn more',
+                    url:'http://www.google.com',
+                    target:'guardianshipAppeal'
+                }
+            ],
+            next:'guardianshipAppeal'
+        },
+        {
+            label:'terminationOfRights',
+            type:'process',
+            text:[
+                'If your rights are',
+                'terminated, there will',
+                'no longer be any',
+                'legal tie between',
+                'you and the children'
+            ],
+            links:[
+                {
+                    text:'Learn more',
+                    url:'http://www.google.com',
+                    target:'terminationAppeal'
+                }
+            ],
+            next:'terminationAppeal'
+        },
+        {
+            label:'guardianshipAppeal',
+            type:'finish',
+            text:[
+                'You have the right',
+                'to appeal the court decision'
+            ],
+            links:[
+                {
+                    text:'Learn more',
+                    url:'http://www.google.com',
+                    target:''
+                }
+            ]
+        },
+        {
+            label:'terminationAppeal',
+            type:'finish',
+            text:[
+                'You have the right',
+                'to appeal the court decision'
+            ],
+            links:[
+                {
+                    text:'Learn more',
                     url:'http://www.google.com',
                     target:''
                 }
@@ -312,42 +416,17 @@ flowSVG.shapes(
         },
         {
             label:'intactSvcResult',
-            type:'decision',
-            text:[
-                'Have you been compliant',
-                'with mandated services?'
-            ],
-            yes:'intactSvcComplete',
-            no:'intactSvcFail'
-        },
-        {
-            label:'intactSvcComplete',
             type:'finish',
             text:[
-                ''
+                'If you have complied',
+                'with mandated services',
+                'you might get your kids',
+                'back. If you have not',
+                'complied, you almost',
+                'certainly will not',
+                'get your kids back.'
             ],
-            links:[
-                {
-                    text:'Case is typically concluded',
-                    url:'http://www.google.com',
-                    target:''
-                }
-            ]
-        },
-        {
-            label:'intactSvcFail',
-            type:'finish',
-            text:[
-                'Case may be continued',
-                'or concluded'
-            ],
-            links:[
-                {
-                    text:'Learn more',
-                    url:'http://www.google.com',
-                    target:''
-                }
-            ]
+
         }
     ]);
 
