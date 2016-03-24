@@ -1,0 +1,1380 @@
+array(
+  (object) array(
+      'vid' => '66',
+      'uid' => '1',
+      'title' => 'Help for Families Navigating DCFS',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '1',
+      'sticky' => '0',
+      'vuuid' => '0fb1ed09-00ca-4c44-9a3a-8740893da1e6',
+      'nid' => '21',
+      'type' => 'decision_tree',
+      'language' => 'und',
+      'created' => '1457882929',
+      'changed' => '1457901900',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => '59b1a271-f438-462f-a374-efdb7ba2e572',
+      'revision_timestamp' => '1457901900',
+      'revision_uid' => '1',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => "<div id=\"drawing\"></div>\r\n    <script>\r\n\r\n    flowSVG.draw(SVG('drawing').size(2000,2000));\r\nflowSVG.config({\r\n    interactive: false,\r\n    showButtons: false,\r\n    connectorLength: 60,\r\n    scrollto: false,\r\n    processHeight:100,\r\n    processWidth:250,\r\n    finishHeight:125,\r\n    finishFill:'#9bc2cf',\r\n    finishLinkColor:'#green',\r\n\r\n});\r\nflowSVG.shapes(\r\n    [\r\n        {\r\n            label:'investigatorVisit',\r\n            type:'decision',\r\n            text:[\r\n                'Did investigator visit',\r\n                'result in a finding',\r\n                'of Indicated?'\r\n            ],\r\n            tip:{\r\n                title:'        ?       ',\r\n                text:[\r\n                    'A DCFS investigator is someone',\r\n                    'who comes to speak with you,',\r\n                    'your children, and other important',\r\n                    'members of your family if a',\r\n                    'report of possible abuse or',\r\n                    'neglect has been accepted.'\r\n                ]\r\n            },\r\n            yes:'indicated',\r\n            no:'notIndicated'\r\n        },\r\n        {\r\n            label:'notIndicated',\r\n            type:'finish',\r\n            text:[\r\n                ''\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn what your options are',\r\n                    url:'/content/not-indicated',\r\n                    target:''\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            label:'indicated',\r\n            type:'decision',\r\n            text:[\r\n                'Are you indicated alone',\r\n                'or with someone else?'\r\n            ],\r\n            tip:{\r\n                title:'        ?       ',\r\n                text:[\r\n                    'Within 60 days after getting',\r\n                    'notice that a report against you',\r\n                    'has been considered indicated',\r\n                    'or founded, you as the',\r\n                    'person named in the report',\r\n                    'have the right to appeal.',\r\n                    'If a report made against you',\r\n                    'is termed indicated, (also',\r\n                    'called founded), DCFS will',\r\n                    'open a case and ask you',\r\n                    'to work with a case worker to',\r\n                    ' make changes to your life if you',\r\n                    'want your children to continue',\r\n                    'to live with you. You have',\r\n                    'a right to see this report. '\r\n                ]\r\n            },\r\n            yes:'self',\r\n            no:'abuser'\r\n        },\r\n        {\r\n            label:'abuser',\r\n            type:'finish',\r\n            text:[\r\n                ''\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn what your options are',\r\n                    url:'http://www.google.com',\r\n                    target:''\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            label:'self',\r\n            type:'process',\r\n            text:[\r\n                'If you have an advocate,',\r\n                'talk to them at every step!'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'/content/im-indicated',\r\n                    target:'intact'\r\n                }\r\n            ],\r\n            next:'intact'\r\n        },\r\n        {\r\n            label:'intact',\r\n            type:'process',\r\n            text:[\r\n                'Consider whether you',\r\n                'wish to appeal the decision'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:'isIntact'\r\n                }\r\n            ],\r\n            next:'isIntact'\r\n        },\r\n        {\r\n            label:'isIntact',\r\n            type:'decision',\r\n            text:[\r\n                'Is the family still together?'\r\n            ],\r\n            yes:'intactCaseworker',\r\n            no:'fosterCare'\r\n        },\r\n        {\r\n            label:'fosterCare',\r\n            type:'process',\r\n            text:[\r\n                'If your kids go to foster',\r\n                'care, you can start',\r\n                'working with a caseworker',\r\n                'and going to court'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn about foster care',\r\n                    url:'http://www.google.com',\r\n                    target:'fosterCareDecision'\r\n                }\r\n            ],\r\n            next:'fosterCareDecision'\r\n        },\r\n        {\r\n            label:'fosterCareDecision',\r\n            type:'decision',\r\n            text:[\r\n                'Would you like to',\r\n                'learn about working',\r\n                'with your caseworker',\r\n                'first?'\r\n            ],\r\n            yes:'fosterCaseworker',\r\n            no:'fosterCourt'\r\n        },\r\n        {\r\n            label:'fosterCaseworker',\r\n            type:'process',\r\n            text:[\r\n                ''\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Meet with your caseworker',\r\n                    url:'http://www.google.com',\r\n                    target:'fosterIntegratedAssessment'\r\n                }\r\n            ],\r\n            next:'fosterIntegratedAssessment'\r\n        },\r\n        {\r\n            label:'fosterIntegratedAssessment',\r\n            type:'process',\r\n            text:[\r\n                'Receive an Integrated',\r\n                'Assessment'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:'fosterSvcPlan'\r\n                }\r\n            ],\r\n            next:'fosterSvcPlan'\r\n        },\r\n        {\r\n            label:'fosterSvcPlan',\r\n            type:'process',\r\n            text:[\r\n                ''\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Receive a Service Plan',\r\n                    url:'http://www.google.com',\r\n                    target:'fosterMandatedSvc'\r\n                }\r\n            ],\r\n            next:'fosterMandatedSvc'\r\n        },\r\n        {\r\n            label:'fosterMandatedSvc',\r\n            type:'process',\r\n            text:[\r\n                'Proceed with mandated',\r\n                'services'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:'fosterSvcResult'\r\n                }\r\n            ],\r\n            next:'fosterSvcResult'\r\n        },\r\n        {\r\n            label:'fosterSvcResult',\r\n            type:'finish',\r\n            text:[\r\n                'Your level of compliance',\r\n                'will feed into the court',\r\n                'decision. Non-compliance',\r\n                'makes a termination',\r\n                'of rights almost certain.'\r\n            ],\r\n\r\n        },\r\n        {\r\n            label:'fosterCourt',\r\n            type:'process',\r\n            text:[\r\n                ''\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'What happens at court?',\r\n                    url:'http://www.google.com',\r\n                    target:'courtDates'\r\n                }\r\n            ],\r\n            next:'courtDates'\r\n        },\r\n        {\r\n            label:'courtDates',\r\n            type:'process',\r\n            text:[\r\n                'You will be assigned court',\r\n                'dates. Click below to',\r\n                'learn about expectations',\r\n                'when you attend court dates.'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:'judgment'\r\n                }\r\n            ],\r\n            next:'judgment'\r\n        },\r\n        {\r\n            label:'judgment',\r\n            type:'decision',\r\n            text:[\r\n                'The judge decides',\r\n                'how your case will',\r\n                'end. Were your children',\r\n                'returned to you?'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:''\r\n                }\r\n            ],\r\n            yes:'returned',\r\n            no:'notReturned'\r\n        },\r\n        {\r\n            label:'returned',\r\n            type:'finish',\r\n            text:[\r\n                'There will be a wrap-up',\r\n                'process that may take',\r\n                '6 months to a year',\r\n                'before the case is closed.'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:''\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            label:'notReturned',\r\n            type:'decision',\r\n            text:[\r\n                'Was the judgment',\r\n                'for Guardianship?'\r\n            ],\r\n            yes:'guardianship',\r\n            no:'terminationOfRights'\r\n        },\r\n        {\r\n            label:'guardianship',\r\n            type:'process',\r\n            text:[\r\n                'The children will',\r\n                'live with someone',\r\n                'else, but you will',\r\n                'have some rights.'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:'guardianshipAppeal'\r\n                }\r\n            ],\r\n            next:'guardianshipAppeal'\r\n        },\r\n        {\r\n            label:'terminationOfRights',\r\n            type:'process',\r\n            text:[\r\n                'If your rights are',\r\n                'terminated, there will',\r\n                'no longer be any',\r\n                'legal tie between',\r\n                'you and the children'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:'terminationAppeal'\r\n                }\r\n            ],\r\n            next:'terminationAppeal'\r\n        },\r\n        {\r\n            label:'guardianshipAppeal',\r\n            type:'finish',\r\n            text:[\r\n                'You have the right',\r\n                'to appeal the court decision'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:''\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            label:'terminationAppeal',\r\n            type:'finish',\r\n            text:[\r\n                'You have the right',\r\n                'to appeal the court decision'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:''\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            label:'intactCaseworker',\r\n            type:'process',\r\n            text:[\r\n                ''\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Meet with your caseworker',\r\n                    url:'http://www.google.com',\r\n                    target:'intactIntegratedAssessment'\r\n                }\r\n            ],\r\n            next:'intactIntegratedAssessment'\r\n        },\r\n        {\r\n            label:'intactIntegratedAssessment',\r\n            type:'process',\r\n            text:[\r\n                'Receive an Integrated',\r\n                'Assessment'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:'intactSvcPlan'\r\n                }\r\n            ],\r\n            next:'intactSvcPlan'\r\n        },\r\n        {\r\n            label:'intactSvcPlan',\r\n            type:'process',\r\n            text:[\r\n                ''\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Receive a Service Plan',\r\n                    url:'http://www.google.com',\r\n                    target:'intactMandatedSvc'\r\n                }\r\n            ],\r\n            next:'intactMandatedSvc'\r\n        },\r\n        {\r\n            label:'intactMandatedSvc',\r\n            type:'process',\r\n            text:[\r\n                'Proceed with mandated',\r\n                'services'\r\n            ],\r\n            links:[\r\n                {\r\n                    text:'Learn more',\r\n                    url:'http://www.google.com',\r\n                    target:'intactSvcResult'\r\n                }\r\n            ],\r\n            next:'intactSvcResult'\r\n        },\r\n        {\r\n            label:'intactSvcResult',\r\n            type:'finish',\r\n            text:[\r\n                'If you have complied',\r\n                'with mandated services',\r\n                'you might get your kids',\r\n                'back. If you have not',\r\n                'complied, you almost',\r\n                'certainly will not',\r\n                'get your kids back.'\r\n            ],\r\n\r\n        }\r\n    ]);\r\n\r\n</script>",
+            'summary' => '',
+            'format' => 'full_html',
+            'safe_value' => "<div id=\"drawing\"></div>\n<script>\n<!--//--><![CDATA[// ><!--\n\n\n    flowSVG.draw(SVG('drawing').size(2000,2000));\nflowSVG.config({\n    interactive: false,\n    showButtons: false,\n    connectorLength: 60,\n    scrollto: false,\n    processHeight:100,\n    processWidth:250,\n    finishHeight:125,\n    finishFill:'#9bc2cf',\n    finishLinkColor:'#green',\n\n});\nflowSVG.shapes(\n    [\n        {\n            label:'investigatorVisit',\n            type:'decision',\n            text:[\n                'Did investigator visit',\n                'result in a finding',\n                'of Indicated?'\n            ],\n            tip:{\n                title:'        ?       ',\n                text:[\n                    'A DCFS investigator is someone',\n                    'who comes to speak with you,',\n                    'your children, and other important',\n                    'members of your family if a',\n                    'report of possible abuse or',\n                    'neglect has been accepted.'\n                ]\n            },\n            yes:'indicated',\n            no:'notIndicated'\n        },\n        {\n            label:'notIndicated',\n            type:'finish',\n            text:[\n                ''\n            ],\n            links:[\n                {\n                    text:'Learn what your options are',\n                    url:'/content/not-indicated',\n                    target:''\n                }\n            ]\n        },\n        {\n            label:'indicated',\n            type:'decision',\n            text:[\n                'Are you indicated alone',\n                'or with someone else?'\n            ],\n            tip:{\n                title:'        ?       ',\n                text:[\n                    'Within 60 days after getting',\n                    'notice that a report against you',\n                    'has been considered indicated',\n                    'or founded, you as the',\n                    'person named in the report',\n                    'have the right to appeal.',\n                    'If a report made against you',\n                    'is termed indicated, (also',\n                    'called founded), DCFS will',\n                    'open a case and ask you',\n                    'to work with a case worker to',\n                    ' make changes to your life if you',\n                    'want your children to continue',\n                    'to live with you. You have',\n                    'a right to see this report. '\n                ]\n            },\n            yes:'self',\n            no:'abuser'\n        },\n        {\n            label:'abuser',\n            type:'finish',\n            text:[\n                ''\n            ],\n            links:[\n                {\n                    text:'Learn what your options are',\n                    url:'http://www.google.com',\n                    target:''\n                }\n            ]\n        },\n        {\n            label:'self',\n            type:'process',\n            text:[\n                'If you have an advocate,',\n                'talk to them at every step!'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'/content/im-indicated',\n                    target:'intact'\n                }\n            ],\n            next:'intact'\n        },\n        {\n            label:'intact',\n            type:'process',\n            text:[\n                'Consider whether you',\n                'wish to appeal the decision'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:'isIntact'\n                }\n            ],\n            next:'isIntact'\n        },\n        {\n            label:'isIntact',\n            type:'decision',\n            text:[\n                'Is the family still together?'\n            ],\n            yes:'intactCaseworker',\n            no:'fosterCare'\n        },\n        {\n            label:'fosterCare',\n            type:'process',\n            text:[\n                'If your kids go to foster',\n                'care, you can start',\n                'working with a caseworker',\n                'and going to court'\n            ],\n            links:[\n                {\n                    text:'Learn about foster care',\n                    url:'http://www.google.com',\n                    target:'fosterCareDecision'\n                }\n            ],\n            next:'fosterCareDecision'\n        },\n        {\n            label:'fosterCareDecision',\n            type:'decision',\n            text:[\n                'Would you like to',\n                'learn about working',\n                'with your caseworker',\n                'first?'\n            ],\n            yes:'fosterCaseworker',\n            no:'fosterCourt'\n        },\n        {\n            label:'fosterCaseworker',\n            type:'process',\n            text:[\n                ''\n            ],\n            links:[\n                {\n                    text:'Meet with your caseworker',\n                    url:'http://www.google.com',\n                    target:'fosterIntegratedAssessment'\n                }\n            ],\n            next:'fosterIntegratedAssessment'\n        },\n        {\n            label:'fosterIntegratedAssessment',\n            type:'process',\n            text:[\n                'Receive an Integrated',\n                'Assessment'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:'fosterSvcPlan'\n                }\n            ],\n            next:'fosterSvcPlan'\n        },\n        {\n            label:'fosterSvcPlan',\n            type:'process',\n            text:[\n                ''\n            ],\n            links:[\n                {\n                    text:'Receive a Service Plan',\n                    url:'http://www.google.com',\n                    target:'fosterMandatedSvc'\n                }\n            ],\n            next:'fosterMandatedSvc'\n        },\n        {\n            label:'fosterMandatedSvc',\n            type:'process',\n            text:[\n                'Proceed with mandated',\n                'services'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:'fosterSvcResult'\n                }\n            ],\n            next:'fosterSvcResult'\n        },\n        {\n            label:'fosterSvcResult',\n            type:'finish',\n            text:[\n                'Your level of compliance',\n                'will feed into the court',\n                'decision. Non-compliance',\n                'makes a termination',\n                'of rights almost certain.'\n            ],\n\n        },\n        {\n            label:'fosterCourt',\n            type:'process',\n            text:[\n                ''\n            ],\n            links:[\n                {\n                    text:'What happens at court?',\n                    url:'http://www.google.com',\n                    target:'courtDates'\n                }\n            ],\n            next:'courtDates'\n        },\n        {\n            label:'courtDates',\n            type:'process',\n            text:[\n                'You will be assigned court',\n                'dates. Click below to',\n                'learn about expectations',\n                'when you attend court dates.'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:'judgment'\n                }\n            ],\n            next:'judgment'\n        },\n        {\n            label:'judgment',\n            type:'decision',\n            text:[\n                'The judge decides',\n                'how your case will',\n                'end. Were your children',\n                'returned to you?'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:''\n                }\n            ],\n            yes:'returned',\n            no:'notReturned'\n        },\n        {\n            label:'returned',\n            type:'finish',\n            text:[\n                'There will be a wrap-up',\n                'process that may take',\n                '6 months to a year',\n                'before the case is closed.'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:''\n                }\n            ]\n        },\n        {\n            label:'notReturned',\n            type:'decision',\n            text:[\n                'Was the judgment',\n                'for Guardianship?'\n            ],\n            yes:'guardianship',\n            no:'terminationOfRights'\n        },\n        {\n            label:'guardianship',\n            type:'process',\n            text:[\n                'The children will',\n                'live with someone',\n                'else, but you will',\n                'have some rights.'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:'guardianshipAppeal'\n                }\n            ],\n            next:'guardianshipAppeal'\n        },\n        {\n            label:'terminationOfRights',\n            type:'process',\n            text:[\n                'If your rights are',\n                'terminated, there will',\n                'no longer be any',\n                'legal tie between',\n                'you and the children'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:'terminationAppeal'\n                }\n            ],\n            next:'terminationAppeal'\n        },\n        {\n            label:'guardianshipAppeal',\n            type:'finish',\n            text:[\n                'You have the right',\n                'to appeal the court decision'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:''\n                }\n            ]\n        },\n        {\n            label:'terminationAppeal',\n            type:'finish',\n            text:[\n                'You have the right',\n                'to appeal the court decision'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:''\n                }\n            ]\n        },\n        {\n            label:'intactCaseworker',\n            type:'process',\n            text:[\n                ''\n            ],\n            links:[\n                {\n                    text:'Meet with your caseworker',\n                    url:'http://www.google.com',\n                    target:'intactIntegratedAssessment'\n                }\n            ],\n            next:'intactIntegratedAssessment'\n        },\n        {\n            label:'intactIntegratedAssessment',\n            type:'process',\n            text:[\n                'Receive an Integrated',\n                'Assessment'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:'intactSvcPlan'\n                }\n            ],\n            next:'intactSvcPlan'\n        },\n        {\n            label:'intactSvcPlan',\n            type:'process',\n            text:[\n                ''\n            ],\n            links:[\n                {\n                    text:'Receive a Service Plan',\n                    url:'http://www.google.com',\n                    target:'intactMandatedSvc'\n                }\n            ],\n            next:'intactMandatedSvc'\n        },\n        {\n            label:'intactMandatedSvc',\n            type:'process',\n            text:[\n                'Proceed with mandated',\n                'services'\n            ],\n            links:[\n                {\n                    text:'Learn more',\n                    url:'http://www.google.com',\n                    target:'intactSvcResult'\n                }\n            ],\n            next:'intactSvcResult'\n        },\n        {\n            label:'intactSvcResult',\n            type:'finish',\n            text:[\n                'If you have complied',\n                'with mandated services',\n                'you might get your kids',\n                'back. If you have not',\n                'complied, you almost',\n                'certainly will not',\n                'get your kids back.'\n            ],\n\n        }\n    ]);\n\n\n//--><!]]>\n</script>",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'field_tree_description' => array(
+        'und' => array(
+          array(
+            'value' => "Are you or your family being investigated by DCFS (the Department of Child and Family Services)?  Use this diagram to help you learn step by step the process DCFS will go through, learn about your rights in the process, and  learn about some possible consequences of actions you take or don't take. \r\n\r\n",
+            'format' => NULL,
+            'safe_value' => "Are you or your family being investigated by DCFS (the Department of Child and Family Services)?  Use this diagram to help you learn step by step the process DCFS will go through, learn about your rights in the process, and  learn about some possible consequences of actions you take or don&#039;t take. \r\n\r\n",
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'sioc:Item',
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '21',
+        'source' => 'node/21',
+        'alias' => 'content/help-families-navigating-dcfs',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457882929',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '1',
+      'comment_count' => '0',
+      'name' => 'techjustice',
+      'picture' => '0',
+      'data' => 'b:0;',
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '111',
+      'uid' => '6',
+      'title' => 'Service Plan',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => '84ee158c-4af3-4ba1-b3f2-89b38c423065',
+      'nid' => '66',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457901550',
+      'changed' => '1457901550',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => 'edc4ba13-66dd-4008-ba76-814bb2ddd9b7',
+      'revision_timestamp' => '1457901550',
+      'revision_uid' => '6',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => 'Coming soon!',
+            'summary' => '',
+            'format' => 'filtered_html',
+            'safe_value' => "<p>Coming soon!</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '71',
+        'source' => 'node/66',
+        'alias' => 'content/service-plan',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457901550',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '6',
+      'comment_count' => '0',
+      'name' => 'kaitlinr',
+      'picture' => '0',
+      'data' => NULL,
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '106',
+      'uid' => '6',
+      'title' => 'Integrated Assessment',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => '05952583-eae1-4f50-b357-df0dc87e556c',
+      'nid' => '61',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457901524',
+      'changed' => '1457901524',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => '2560d1e2-c615-420c-a07d-faa93d183aba',
+      'revision_timestamp' => '1457901524',
+      'revision_uid' => '6',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => 'Coming soon!',
+            'summary' => '',
+            'format' => 'filtered_html',
+            'safe_value' => "<p>Coming soon!</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '66',
+        'source' => 'node/61',
+        'alias' => 'content/integrated-assessment-0',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457901524',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '6',
+      'comment_count' => '0',
+      'name' => 'kaitlinr',
+      'picture' => '0',
+      'data' => NULL,
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '101',
+      'uid' => '6',
+      'title' => 'Caseworker',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => '2329faa9-cf2f-4d48-bfa8-c5c080fde53f',
+      'nid' => '56',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457901314',
+      'changed' => '1457901314',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => '9bdfdc66-1415-4d3c-8567-3d6db7421e82',
+      'revision_timestamp' => '1457901314',
+      'revision_uid' => '6',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => 'Coming soon!',
+            'summary' => '',
+            'format' => 'filtered_html',
+            'safe_value' => "<p>Coming soon!</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '61',
+        'source' => 'node/56',
+        'alias' => 'content/caseworker',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457901314',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '6',
+      'comment_count' => '0',
+      'name' => 'kaitlinr',
+      'picture' => '0',
+      'data' => NULL,
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '96',
+      'uid' => '6',
+      'title' => 'Foster Care',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => '7fd9658a-abd4-4c5d-b4fc-9906cf856fcc',
+      'nid' => '51',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457901120',
+      'changed' => '1457901120',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => '2a83c78d-28c4-42a7-82c1-8c05c174996c',
+      'revision_timestamp' => '1457901120',
+      'revision_uid' => '6',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => "If your child has been placed in foster care, there are two broad options. They may be placed with a family member of yours or the other biological parent’s, or they may be placed in a foster care family or a group home. Either way, you will either have opportunities to see them or you will be told what steps you are expected to take before you can see them again. Visits with your kids can be one of two broad categories - supervised visits, or unsupervised visits. Below, we will explain all of these ideas more.\r\n\r\nDCFS has a requirement to search for family members who are safe and willing to care for your children if they’ve been removed from your custody as the parent. Common family that kids land with includes grandparents, aunts/uncles, These are biological family members or family of legal/adopted parents - they are not allowed to be family of a partner of yours who is not married to you and/or has not adopted the kids. ",
+            'summary' => '',
+            'format' => 'filtered_html',
+            'safe_value' => "<p>If your child has been placed in foster care, there are two broad options. They may be placed with a family member of yours or the other biological parent’s, or they may be placed in a foster care family or a group home. Either way, you will either have opportunities to see them or you will be told what steps you are expected to take before you can see them again. Visits with your kids can be one of two broad categories - supervised visits, or unsupervised visits. Below, we will explain all of these ideas more.</p>\n<p>DCFS has a requirement to search for family members who are safe and willing to care for your children if they’ve been removed from your custody as the parent. Common family that kids land with includes grandparents, aunts/uncles, These are biological family members or family of legal/adopted parents - they are not allowed to be family of a partner of yours who is not married to you and/or has not adopted the kids.</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '56',
+        'source' => 'node/51',
+        'alias' => 'content/foster-care',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457901120',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '6',
+      'comment_count' => '0',
+      'name' => 'kaitlinr',
+      'picture' => '0',
+      'data' => NULL,
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '91',
+      'uid' => '6',
+      'title' => 'Appeal',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => 'd06b3977-2097-43b2-9ca8-6526908c84a0',
+      'nid' => '46',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457900925',
+      'changed' => '1457900986',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => 'b7781bdf-2433-4621-aa8a-3507a44edc98',
+      'revision_timestamp' => '1457900986',
+      'revision_uid' => '6',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => "Within 60 days of a report being determined 'indicated' or 'founded,' you have the right to appeal the founded decision. This is because you are the person who is being named a potential danger to the child. You must make your appeal in writing. If you choose to do this, it will start an administrative process within DCFS to look closer at the evidence that was found in the original investigation, as well as any evidence you provide for why the incident or incidents that are being considered abusive or neglectful to the child actually were not. If you choose to do this, an advocate or lawyer may be able to help you.",
+            'summary' => '',
+            'format' => 'filtered_html',
+            'safe_value' => "<p>Within 60 days of a report being determined 'indicated' or 'founded,' you have the right to appeal the founded decision. This is because you are the person who is being named a potential danger to the child. You must make your appeal in writing. If you choose to do this, it will start an administrative process within DCFS to look closer at the evidence that was found in the original investigation, as well as any evidence you provide for why the incident or incidents that are being considered abusive or neglectful to the child actually were not. If you choose to do this, an advocate or lawyer may be able to help you.</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '51',
+        'source' => 'node/46',
+        'alias' => 'content/appeal',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457900925',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '6',
+      'comment_count' => '0',
+      'name' => 'kaitlinr',
+      'picture' => '0',
+      'data' => NULL,
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '86',
+      'uid' => '6',
+      'title' => "I'm not Indicated",
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => 'acf1bb5e-ad99-4f72-b523-9dfe2c967a71',
+      'nid' => '41',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457900661',
+      'changed' => '1457900661',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => 'a8c3b1dc-7cfc-45e3-b2a4-3ba4628ec91b',
+      'revision_timestamp' => '1457900661',
+      'revision_uid' => '6',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => "If you are not indicated in the report, but someone else who is a caretaker of your children is indicated, this means that they are seen by the state as having done something dangerous to the kids, and as a risk for doing dangerous things in the future. You can follow this flow chart to see what this person will be going through in the weeks and months to come.\r\n\r\nAlso, it's important to know that you might have access to this person's case worker, and through the case worker to resources and services that could help you if you are struggling with parenting, drug and alcohol use, domestic violence, etc.\r\n\r\nIf you made the call that started this DCFS investigation, you have a right to see the report that was made.",
+            'summary' => '',
+            'format' => 'filtered_html',
+            'safe_value' => "<p>If you are not indicated in the report, but someone else who is a caretaker of your children is indicated, this means that they are seen by the state as having done something dangerous to the kids, and as a risk for doing dangerous things in the future. You can follow this flow chart to see what this person will be going through in the weeks and months to come.</p>\n<p>Also, it's important to know that you might have access to this person's case worker, and through the case worker to resources and services that could help you if you are struggling with parenting, drug and alcohol use, domestic violence, etc.</p>\n<p>If you made the call that started this DCFS investigation, you have a right to see the report that was made.</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '46',
+        'source' => 'node/41',
+        'alias' => 'content/im-not-indicated',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457900661',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '6',
+      'comment_count' => '0',
+      'name' => 'kaitlinr',
+      'picture' => '0',
+      'data' => NULL,
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '81',
+      'uid' => '6',
+      'title' => 'Court',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => '392f6218-1303-4b63-91f7-6da5a525d457',
+      'nid' => '36',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457899467',
+      'changed' => '1457899467',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => '21ff407a-7222-4353-b1da-595de2ca7a07',
+      'revision_timestamp' => '1457899467',
+      'revision_uid' => '6',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => "At the same time that you may be meeting with your caseworker, visiting with your children, and going to the services that have been mandated in your case, your case will also be going through a court process. The judge in this process is not on anyone's side; instead, he or she will listen to what has happened and ask for more information, as well as take recommendations from the case worker, service providers, and several of the court people listed below. At the end, the judge will make a decision that is binding, but that you as the parent may have the right to appeal if you disagree with. This process is often very long and slow, and difficult to understand for outsiders. Your attorney and any advocates you have are great resources to help you understand the court process. Know that it is very normal for court processes around child custody to take between 6 months and 2 years to be entirely completed, but that that does not necessarily mean it will take that long for your children to be living in your custody again.\r\n\r\n<strong>People at Court</strong>\r\nJudge: The  judge presides over court. The judge is supposed to conduct the trial impartially and in an open court. The judge hears all the witnesses and any other evidence presented by the lawyers on the case, assesses the credibility and arguments of the parties, and then issues a ruling based on his or her interpretation of the law and his or her own personal judgment. It's important to know that, at this point in the process, the judge is the ultimate decision maker, and has the ultimate power. If the judge makes a final decision that you disagree with, the only option you have is to appeal.\r\n\r\nYour GAL (short for Guardian Ad Litem) is a social worker, lawyer, or other professional who is a neutral party to both parents. GALs can be appointed by the judge or an individual can request that a GAL be assigned to their case through a motion. GALs will look into the case and report back to the Judge with information that will assist the judge with his/her decision regarding visitation and supervision. It is very important that individuals always work with their assigned GAL, as these recommendations will affect their case (masslegalhelp.org, 2016).\r\n\r\nState's Attorney's Office: The State's Attorney is in charge of collecting all evidence that the children would not be safe if returned to your care, and arguing on the side of state law. This means that the State's Attorney will almost always look like they are arguing for you not to get your kids back; often, what it means is that they are making sure the judge is very sure of the safety of the kids before they come back to you.\r\n\r\nAdvocate:  An individual who is not a lawyer but will assist a victim with understanding the legal process. An advocate can attend court with you as the parent but cannot offer you legal opinions. An advocate can provide emotional support as well as resources that will assist you through the legal and life recovery process. Some kinds of advocates include a domestic violence advocate (whether your co-parent has been abusive to you or you have been a victim of someone's abuse in the past), a mental health advocate, or a disability advocate. They work in addition to and with your lawyer and any other service providers like your therapist, your children's therapists, drug and alcohol counselors, etc.\r\n\r\nPublic Defender: The Public Defender is appointed by the judge when an individual is not able to afford an attorney (55 ILCS 5/3-4006). A Public Defender should be available to you at the time of the first court appearance. The Public Defender provides legal representation and should talk with you about what each step in the court process means for you, what your options are, and possible ways to get things that you want. The Public Defender is required to protect anything you tell them under the law, and to do the best job he or she can to help you win your case.",
+            'summary' => '',
+            'format' => 'filtered_html',
+            'safe_value' => "<p>At the same time that you may be meeting with your caseworker, visiting with your children, and going to the services that have been mandated in your case, your case will also be going through a court process. The judge in this process is not on anyone's side; instead, he or she will listen to what has happened and ask for more information, as well as take recommendations from the case worker, service providers, and several of the court people listed below. At the end, the judge will make a decision that is binding, but that you as the parent may have the right to appeal if you disagree with. This process is often very long and slow, and difficult to understand for outsiders. Your attorney and any advocates you have are great resources to help you understand the court process. Know that it is very normal for court processes around child custody to take between 6 months and 2 years to be entirely completed, but that that does not necessarily mean it will take that long for your children to be living in your custody again.</p>\n<p><strong>People at Court</strong><br />\nJudge: The  judge presides over court. The judge is supposed to conduct the trial impartially and in an open court. The judge hears all the witnesses and any other evidence presented by the lawyers on the case, assesses the credibility and arguments of the parties, and then issues a ruling based on his or her interpretation of the law and his or her own personal judgment. It's important to know that, at this point in the process, the judge is the ultimate decision maker, and has the ultimate power. If the judge makes a final decision that you disagree with, the only option you have is to appeal.</p>\n<p>Your GAL (short for Guardian Ad Litem) is a social worker, lawyer, or other professional who is a neutral party to both parents. GALs can be appointed by the judge or an individual can request that a GAL be assigned to their case through a motion. GALs will look into the case and report back to the Judge with information that will assist the judge with his/her decision regarding visitation and supervision. It is very important that individuals always work with their assigned GAL, as these recommendations will affect their case (masslegalhelp.org, 2016).</p>\n<p>State's Attorney's Office: The State's Attorney is in charge of collecting all evidence that the children would not be safe if returned to your care, and arguing on the side of state law. This means that the State's Attorney will almost always look like they are arguing for you not to get your kids back; often, what it means is that they are making sure the judge is very sure of the safety of the kids before they come back to you.</p>\n<p>Advocate:  An individual who is not a lawyer but will assist a victim with understanding the legal process. An advocate can attend court with you as the parent but cannot offer you legal opinions. An advocate can provide emotional support as well as resources that will assist you through the legal and life recovery process. Some kinds of advocates include a domestic violence advocate (whether your co-parent has been abusive to you or you have been a victim of someone's abuse in the past), a mental health advocate, or a disability advocate. They work in addition to and with your lawyer and any other service providers like your therapist, your children's therapists, drug and alcohol counselors, etc.</p>\n<p>Public Defender: The Public Defender is appointed by the judge when an individual is not able to afford an attorney (55 ILCS 5/3-4006). A Public Defender should be available to you at the time of the first court appearance. The Public Defender provides legal representation and should talk with you about what each step in the court process means for you, what your options are, and possible ways to get things that you want. The Public Defender is required to protect anything you tell them under the law, and to do the best job he or she can to help you win your case.</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '41',
+        'source' => 'node/36',
+        'alias' => 'content/court',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457899467',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '6',
+      'comment_count' => '0',
+      'name' => 'kaitlinr',
+      'picture' => '0',
+      'data' => NULL,
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '76',
+      'uid' => '1',
+      'title' => 'I called DCFS and the investigation led to a finding of not indicated',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => 'bd77d30c-bb77-47f6-b096-9efcd5221d39',
+      'nid' => '31',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457895512',
+      'changed' => '1457897901',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => '9be1cf2a-bae3-425f-a3ba-103d0aeb12ac',
+      'revision_timestamp' => '1457897901',
+      'revision_uid' => '1',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => "When a report leads to a finding of not indicated, that means there was not enough credible evidence the abuse/neglect occurred to get an indicated finding. This does not mean the other parent's conduct is ok, the conduct just might not meet DCFS's definitions of abuse/neglect.\r\n\r\n<h2>Can I Appeal?</h2>\r\n\r\nThis is a process through DCFS. This allows a second look at the allegations of abuse/neglect.\r\nA second look could be accomplished prior to the initial decision by speaking with the investigator's supervisor if the investigator is sounding like the report will be not indicated.\r\nThis process is an administrative, not court, process initially, but could go to court after the administrative review process is exhausted.\r\n\r\n<h2>What are my other options</h2>\r\n<ul><li>You could try to seek an Order of Protection.</li>\r\n<li>You could try to modify any custody/visitation/parenting time order if one exists.</li>\r\n<li>You can wait and see if any further abuse/neglect occurs, document it, and report new incidents to the DCFS hotline and law enforcement, if appropriate.</li>\r\n</ul>\r\n\r\n\r\n\r\nDon't get discouraged, sometimes a later report may result in action even if the first one did not.\r\n\r\nIt can be harder to get relief in court because court requires more proof than DCFS.",
+            'summary' => '',
+            'format' => 'full_html',
+            'safe_value' => "<p>When a report leads to a finding of not indicated, that means there was not enough credible evidence the abuse/neglect occurred to get an indicated finding. This does not mean the other parent's conduct is ok, the conduct just might not meet DCFS's definitions of abuse/neglect.</p>\n<h2>Can I Appeal?</h2>\n<p>This is a process through DCFS. This allows a second look at the allegations of abuse/neglect.<br />\nA second look could be accomplished prior to the initial decision by speaking with the investigator's supervisor if the investigator is sounding like the report will be not indicated.<br />\nThis process is an administrative, not court, process initially, but could go to court after the administrative review process is exhausted.</p>\n<h2>What are my other options</h2>\n<ul><li>You could try to seek an Order of Protection.</li>\n<li>You could try to modify any custody/visitation/parenting time order if one exists.</li>\n<li>You can wait and see if any further abuse/neglect occurs, document it, and report new incidents to the DCFS hotline and law enforcement, if appropriate.</li>\n</ul><p>Don't get discouraged, sometimes a later report may result in action even if the first one did not.</p>\n<p>It can be harder to get relief in court because court requires more proof than DCFS.</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '36',
+        'source' => 'node/31',
+        'alias' => 'content/not-indicated',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457895512',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '1',
+      'comment_count' => '0',
+      'name' => 'techjustice',
+      'picture' => '0',
+      'data' => 'b:0;',
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '71',
+      'uid' => '6',
+      'title' => "I'm Indicated",
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => '58a0fa5a-79eb-4da1-b5cd-a3eaee1483c1',
+      'nid' => '26',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457894618',
+      'changed' => '1457894618',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => '16f6c338-5c1b-4393-967a-1e31011fcfc7',
+      'revision_timestamp' => '1457894618',
+      'revision_uid' => '6',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => "What does it mean if an investigation of abuse or neglect is Indicated? It means that the investigator found evidence of abuse or neglect by the parent or guardian who was being investigated. If you are one of the parents or guardians, it means that you are going to be required to do many things in the next several months if you want to keep being the caregiver of the kids, keep the kids living with you, or get the kids back to living with you. It's important for you to know, these are requirements - if you don't do them, only do some, or stop part way, you are at risk of losing your parental rights and all possibility of your kids living with you. (There are a few exceptions, and we talk about those <a href=\"url\">here</a>.) However, it’s also important for you to know that the stated goal of DCFS is to keep families together, or return them to one another if they’re separated for a period of time. The only goal more important for them is keeping all kids safe - which in this case means the law’s definition of safe, and it’s the case worker, the supervisor, and maybe the judge, rather than you as the parent, who decide.\r\n\r\nLots of things are about to happen. You are going to be assigned a case worker who will be working with you throughout the process and informing you about what is happening. The case worker and their supervisor also have the power to make decisions about some things that will happen next, and make recommendations about other things that may happen next. (For examples of places where case workers and supervisors only recommend, click <a href=\"url\">here</a> to go to the Court section.)\r\n\r\nOne of the scariest things that can happen now is that your kids might be taken out of your home. They might be taken away to a relative or a foster family. Please remember, this is not permanent, and you have a role to play in them coming back. See the pages connected to <a href=\"url\">Foster Care</a> to learn more.\r\n\r\nYou will be sent to lots of assessments right now - about your parenting, your mental health, your history and family, etc. And those will all be collected together in a document called the <a href=\"url\">Integrated Assessment</a>, that you have the right to see. That will be used to make your service plan, which your case worker will share with you. The service plan includes all the programs that you are expected to work with so that DCFS knows you have the knowledge to be a safe parent in the future. They might ask you to make some hard changes to your life, or changes you don’t want to make. \r\n\r\nKnow that you always have at least one choice - to cooperate or not - but that both of those options have very difficult consequences. \r\n\r\nCooperating means changing things that you may not think are broken, and it can come with some very difficult emotions. Anger, frustration, shame, guilt, and hurt are all very common feelings for people going through this process, and you are not alone or wrong if you feel them. \r\n\r\nNot cooperating - not necessarily with every single little process but in the big picture - usually means that your children will not be returned to you, or will be taken away from you. This can end in your children being adopted by a co-parent or another family member, or put into the foster care system, and if you do not cooperate a time may come when you have very little or no say in whether that happens. For more information about this, you can read our pages about <a href=\"url\">Guardianship</a> and <a href=\"url\">Termination of Rights</a>.",
+            'summary' => '',
+            'format' => 'full_html',
+            'safe_value' => "<p>What does it mean if an investigation of abuse or neglect is Indicated? It means that the investigator found evidence of abuse or neglect by the parent or guardian who was being investigated. If you are one of the parents or guardians, it means that you are going to be required to do many things in the next several months if you want to keep being the caregiver of the kids, keep the kids living with you, or get the kids back to living with you. It's important for you to know, these are requirements - if you don't do them, only do some, or stop part way, you are at risk of losing your parental rights and all possibility of your kids living with you. (There are a few exceptions, and we talk about those <a href=\"url\">here</a>.) However, it’s also important for you to know that the stated goal of DCFS is to keep families together, or return them to one another if they’re separated for a period of time. The only goal more important for them is keeping all kids safe - which in this case means the law’s definition of safe, and it’s the case worker, the supervisor, and maybe the judge, rather than you as the parent, who decide.</p>\n<p>Lots of things are about to happen. You are going to be assigned a case worker who will be working with you throughout the process and informing you about what is happening. The case worker and their supervisor also have the power to make decisions about some things that will happen next, and make recommendations about other things that may happen next. (For examples of places where case workers and supervisors only recommend, click <a href=\"url\">here</a> to go to the Court section.)</p>\n<p>One of the scariest things that can happen now is that your kids might be taken out of your home. They might be taken away to a relative or a foster family. Please remember, this is not permanent, and you have a role to play in them coming back. See the pages connected to <a href=\"url\">Foster Care</a> to learn more.</p>\n<p>You will be sent to lots of assessments right now - about your parenting, your mental health, your history and family, etc. And those will all be collected together in a document called the <a href=\"url\">Integrated Assessment</a>, that you have the right to see. That will be used to make your service plan, which your case worker will share with you. The service plan includes all the programs that you are expected to work with so that DCFS knows you have the knowledge to be a safe parent in the future. They might ask you to make some hard changes to your life, or changes you don’t want to make. </p>\n<p>Know that you always have at least one choice - to cooperate or not - but that both of those options have very difficult consequences. </p>\n<p>Cooperating means changing things that you may not think are broken, and it can come with some very difficult emotions. Anger, frustration, shame, guilt, and hurt are all very common feelings for people going through this process, and you are not alone or wrong if you feel them. </p>\n<p>Not cooperating - not necessarily with every single little process but in the big picture - usually means that your children will not be returned to you, or will be taken away from you. This can end in your children being adopted by a co-parent or another family member, or put into the foster care system, and if you do not cooperate a time may come when you have very little or no say in whether that happens. For more information about this, you can read our pages about <a href=\"url\">Guardianship</a> and <a href=\"url\">Termination of Rights</a>.</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '31',
+        'source' => 'node/26',
+        'alias' => 'content/im-indicated',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457894618',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '6',
+      'comment_count' => '0',
+      'name' => 'kaitlinr',
+      'picture' => '0',
+      'data' => NULL,
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '11',
+      'uid' => '1',
+      'title' => 'Call is placed',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '1',
+      'sticky' => '0',
+      'vuuid' => 'd7917444-781b-4705-8ed8-bbe8c765459b',
+      'nid' => '11',
+      'type' => 'pros_cons_and_options',
+      'language' => 'und',
+      'created' => '1457814598',
+      'changed' => '1457832997',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => 'cc284656-6fa7-40b0-8008-7665cfe5b454',
+      'revision_timestamp' => '1457832997',
+      'revision_uid' => '1',
+      'field_pros' => array(
+        'und' => array(
+          array(
+            'value' => '1',
+            'revision_id' => '1',
+          ),
+          array(
+            'value' => '6',
+            'revision_id' => '6',
+          ),
+          array(
+            'value' => '16',
+            'revision_id' => '16',
+          ),
+          array(
+            'value' => '21',
+            'revision_id' => '21',
+          ),
+        ),
+      ),
+      'field_cons' => array(
+        'und' => array(
+          array(
+            'value' => '11',
+            'revision_id' => '11',
+          ),
+          array(
+            'value' => '26',
+            'revision_id' => '26',
+          ),
+          array(
+            'value' => '31',
+            'revision_id' => '31',
+          ),
+        ),
+      ),
+      'field_options' => array(
+        'und' => array(
+          array(
+            'value' => '36',
+            'revision_id' => '36',
+          ),
+          array(
+            'value' => '41',
+            'revision_id' => '41',
+          ),
+          array(
+            'value' => '46',
+            'revision_id' => '46',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'sioc:Item',
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '11',
+        'source' => 'node/11',
+        'alias' => 'content/call-placed',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457814598',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '1',
+      'comment_count' => '0',
+      'name' => 'techjustice',
+      'picture' => '0',
+      'data' => 'b:0;',
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '6',
+      'uid' => '1',
+      'title' => 'Call by victim',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => '67305087-db43-45e8-8f0e-329d0e5092a1',
+      'nid' => '6',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457813204',
+      'changed' => '1457813204',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => 'caee5539-c8ab-4c9c-8bf2-9e3375bcaaea',
+      'revision_timestamp' => '1457813204',
+      'revision_uid' => '1',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => "Factors\r\n\r\nPhysical abuse & sexual abuse are more likely to be paid attention to than emotional abuse which is more likely to be paid attention to than neglect\r\nHave you called before\r\nHave you gathered evidence\r\n",
+            'summary' => '',
+            'format' => 'filtered_html',
+            'safe_value' => "<p>Factors</p>\n<p>Physical abuse &amp; sexual abuse are more likely to be paid attention to than emotional abuse which is more likely to be paid attention to than neglect<br />\nHave you called before<br />\nHave you gathered evidence</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '6',
+        'source' => 'node/6',
+        'alias' => 'content/call-victim',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457813204',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '1',
+      'comment_count' => '0',
+      'name' => 'techjustice',
+      'picture' => '0',
+      'data' => 'b:0;',
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+  (object) array(
+      'vid' => '1',
+      'uid' => '1',
+      'title' => 'Integrated assessment?',
+      'log' => '',
+      'status' => '1',
+      'comment' => '1',
+      'promote' => '0',
+      'sticky' => '0',
+      'vuuid' => '0dc80b93-1d79-4b47-8630-0814bb9b5974',
+      'nid' => '1',
+      'type' => 'page',
+      'language' => 'und',
+      'created' => '1457812742',
+      'changed' => '1457812742',
+      'tnid' => '0',
+      'translate' => '0',
+      'uuid' => '70a5ad45-2eaf-4e6e-83ad-7c15a0afa532',
+      'revision_timestamp' => '1457812742',
+      'revision_uid' => '1',
+      'body' => array(
+        'und' => array(
+          array(
+            'value' => "What is an integrated assessment?\r\nWhy is  this important?\r\n",
+            'summary' => '',
+            'format' => 'filtered_html',
+            'safe_value' => "<p>What is an integrated assessment?<br />\nWhy is  this important?</p>\n",
+            'safe_summary' => '',
+          ),
+        ),
+      ),
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          'foaf:Document',
+        ),
+        'title' => array(
+          'predicates' => array(
+            'dc:title',
+          ),
+        ),
+        'created' => array(
+          'predicates' => array(
+            'dc:date',
+            'dc:created',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'changed' => array(
+          'predicates' => array(
+            'dc:modified',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+        'body' => array(
+          'predicates' => array(
+            'content:encoded',
+          ),
+        ),
+        'uid' => array(
+          'predicates' => array(
+            'sioc:has_creator',
+          ),
+          'type' => 'rel',
+        ),
+        'name' => array(
+          'predicates' => array(
+            'foaf:name',
+          ),
+        ),
+        'comment_count' => array(
+          'predicates' => array(
+            'sioc:num_replies',
+          ),
+          'datatype' => 'xsd:integer',
+        ),
+        'last_activity' => array(
+          'predicates' => array(
+            'sioc:last_activity_date',
+          ),
+          'datatype' => 'xsd:dateTime',
+          'callback' => 'date_iso8601',
+        ),
+      ),
+      'path' => array(
+        'pid' => '1',
+        'source' => 'node/1',
+        'alias' => 'content/integrated-assessment',
+        'language' => 'und',
+      ),
+      'cid' => '0',
+      'last_comment_timestamp' => '1457812742',
+      'last_comment_name' => NULL,
+      'last_comment_uid' => '1',
+      'comment_count' => '0',
+      'name' => 'techjustice',
+      'picture' => '0',
+      'data' => 'b:0;',
+      'menu' => NULL,
+      'node_export_drupal_version' => '7',
+    ),
+)
